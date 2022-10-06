@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"module": "commonjs",
+		"target": "es5",
+		"jsx": "react",
+		"allowJs": true,
+		"sourceMap": true,
+		"noImplicitAny": false,
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"experimentalDecorators": true,
+		"allowSyntheticDefaultImports": true,
+		"strictNullChecks": true,
+		"baseUrl": "./src"
+	},
+	"include": ["src", "scripts", "config"],
+	"exclude": ["node_modules", "**/*.spec.ts"]
+}
