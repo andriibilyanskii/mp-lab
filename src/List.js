@@ -10,7 +10,7 @@ class ListController {
 
 	addNode(data) {
 		let node = new SinglyLinkedListNode();
-		node.data = this.listNodes.length + 1;
+		node.data = data;
 		node.next = null;
 
 		let listTemp = this.listNodes;
