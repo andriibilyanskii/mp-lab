@@ -33,6 +33,35 @@ class ListController {
 		}
 	}
 
+	sort() {
+		let listTemp = this.listNodes.map((e) => e.data);
+
+		listTemp.sort((a, b) => {
+			const dataA = a.toUpperCase();
+			const dataB = b.toUpperCase();
+			if (dataA < dataB) {
+				return -1;
+			}
+			if (dataA > dataB) {
+				return 1;
+			}
+
+			return 0;
+		});
+
+		if (listTemp.length > 1) {
+			let listReversed = listTemp.reverse();
+
+			for (let i = 0; i < listReversed.length; i++) {
+				listReversed[i] = { data: listReversed[i], next: listReversed[i - 1] };
+			}
+
+			this.listNodes = listReversed.reverse();
+		}
+
+		return this.listNodes;
+	}
+
 	printList(n) {
 		let list = [];
 
