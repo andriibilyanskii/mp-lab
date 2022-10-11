@@ -13,7 +13,9 @@ function App() {
 		return (
 			<ul>
 				<li>
-					<p>data: <span className='data'>{data.data}</span></p>
+					<p>
+						data: <span className='data'>{data.data}</span>
+					</p>
 					{data.next && (
 						<>
 							<p>next: </p>
@@ -32,6 +34,7 @@ function App() {
 		setListNodes(list.getListNodes());
 		setI(i + 1);
 		setValue('');
+		console.clear();
 		console.log('Додано новий елемент:', listNodes);
 		ref.current.focus();
 	};
@@ -42,6 +45,7 @@ function App() {
 			setList(list);
 			setListNodes(list.getListNodes());
 			setI(i + 1);
+			console.clear();
 			console.log('Посортовано:', sorted);
 		}
 	};
