@@ -43,11 +43,13 @@ function App() {
 	};
 
 	const sort = () => {
-		const sorted = list.sort();
-		setList(list);
-		setListNodes(list.getListNodes());
-		setI(i + 1);
-		console.log('Посортовано:', sorted);
+		if (listNodes.length > 1) {
+			const sorted = list.sort();
+			setList(list);
+			setListNodes(list.getListNodes());
+			setI(i + 1);
+			console.log('Посортовано:', sorted);
+		}
 	};
 
 	return (
