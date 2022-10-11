@@ -10,25 +10,19 @@ function App() {
 	const ref = useRef();
 
 	const createTree = (data) => {
-		if (data.next) {
-			return (
-				<ul>
-					<li>
-						<p>data: {data.data}</p>
-						<p>next: </p>
-						{createTree(data.next)}
-					</li>
-				</ul>
-			);
-		} else {
-			return (
-				<ul>
-					<li>
-						<p>data: {data.data}</p>
-					</li>
-				</ul>
-			);
-		}
+		return (
+			<ul>
+				<li>
+					<p>data: <span className='data'>{data.data}</span></p>
+					{data.next && (
+						<>
+							<p>next: </p>
+							{createTree(data.next)}
+						</>
+					)}
+				</li>
+			</ul>
+		);
 	};
 
 	const addElement = (e) => {
@@ -53,7 +47,7 @@ function App() {
 	};
 
 	return (
-		<div>
+		<div className='box'>
 			<div className='add-sort'>
 				<form onSubmit={addElement}>
 					<input

@@ -38,8 +38,8 @@ class ListController {
 			let listTemp = this.listNodes.map((e) => e.data);
 
 			listTemp.sort((a, b) => {
-				const dataA = a.toUpperCase();
-				const dataB = b.toUpperCase();
+				const dataA = String(a).toUpperCase();
+				const dataB = String(b).toUpperCase();
 				if (dataA < dataB) {
 					return -1;
 				}
@@ -60,7 +60,7 @@ class ListController {
 				this.listNodes = listReversed.reverse();
 			}
 		}
-		
+
 		return this.listNodes;
 	}
 
